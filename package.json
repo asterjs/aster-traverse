@@ -10,7 +10,8 @@
     "ast",
     "javascript",
     "transform",
-    "modify"
+    "modify",
+    "traverse"
   ],
   "main": "index.js",
   "scripts": {
