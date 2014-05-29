@@ -20,7 +20,13 @@ var traverse = require('aster-traverse');
 
 aster.src('src/**/*.js')
 .map(traverse({
-  stringOption: 'value'
+  replace: true,
+  leave: function (node) {
+    // Optimizing obvious calculations, concatenations, etc.
+    if (node.type === 'BinaryExpression' && node.left.type === 'Literal' && node.right.type === 'Literal') {
+      return {type: 'Literal', value: eval(JSON.stringify(node.left.value) + node.operator + JSON.stringify(node.right.value))};
+    }
+  }
 }))
 .map(aster.dest('dist'))
 .concatAll()
@@ -34,10 +40,25 @@ aster.src('src/**/*.js')
 
 ### traverse(options)
 
-#### options.stringOption
-Type: `String`
+#### options.enter, options.leave
+Type: `Function`
 
-Some string option.
+Handler functions to be executed on enter/leave of each node.
+
+#### options.replace
+Type: `Boolean`
+
+If set, result of `enter`/`leave` would be used as replacement for node.
+
+### Special values
+
+#### traverse.Skip
+
+If returned from handler, this node would be skipped from processing.
+
+#### traverse.Break
+
+If returned from handler, breaks traversal completely.
 
 ## License
 

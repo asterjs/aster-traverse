@@ -1,6 +1,6 @@
 {
   "name": "aster-traverse",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Traverse with aster.",
   "author": "Ingvar Stepanyan <me@rreverser.com> (https://github.com/RReverser)",
   "repository": "asterjs/aster-traverse",
