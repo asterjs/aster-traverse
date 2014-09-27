@@ -1,6 +1,6 @@
 {
   "name": "aster-traverse",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Traverse with aster.",
   "author": "Ingvar Stepanyan <me@rreverser.com> (https://github.com/RReverser)",
   "repository": "asterjs/aster-traverse",
@@ -18,10 +18,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "estraverse": "^1.5.0"
+    "estraverse": "^1.5.1"
   },
   "devDependencies": {
     "mocha": "*",
-    "rx": "^2.2.0"
+    "rx": "^2.3.11"
   }
 }
