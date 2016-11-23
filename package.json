@@ -18,10 +18,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "estraverse": "^1.5.1"
+    "estraverse": "estools/estraverse#master"
   },
   "devDependencies": {
     "mocha": "*",
-    "rx": "^2.3.11"
+    "rx": "^4.1.0"
   }
 }
